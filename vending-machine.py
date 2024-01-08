@@ -188,7 +188,6 @@ def invoice(cart, cash, change):
     current = datetime.now()
     # print formatted receipt 
     print("\n\t\t\t\t \033[1;36mRECEIPT\033[0m")
-    # print("\t\t----------------------------------------")
     print("\t\t────────────────────────────────────────")
     # prints date and time as day/month/year and hour:minute:second
     print(f"\t\t Date: {current.strftime('%d/%m/%Y')}        Time: {current.strftime('%H:%M:%S')}")
@@ -262,7 +261,7 @@ def selection(card_used, money, cash):
                                     money += more
                                     # add the money inserted again to the total amount of money inserted into the machine
                                     cash += more
-                                    # print the new balance the user has left to use when (all princes in the receipt are rounded to 2 decimal places)
+                                    # print the new balance the user has (all prices in the receipt are rounded to 2 decimal places)
                                     print(f"\n\t\t\t \033[1;32mNew balance: \033[0mAED {money:.2f}")
                                 break
                             # handles error in inserting more money (if money can't be converted to float)
@@ -303,7 +302,7 @@ def selection(card_used, money, cash):
                 elif card_used == True:
                     ## makes the transaction seem more realistic 
                     # card is being connected with the bank
-                    print(f"\n\t\tYour purchase is beingt555t authenticated{small_pause()}.{small_pause()}.{small_pause()}.")
+                    print(f"\n\t\tYour purchase is being authenticated...")
                     small_pause()     # 0.5-second break
                     # print message that item has been purchased
                     print("\t\t     The payment has been deducted. ")
